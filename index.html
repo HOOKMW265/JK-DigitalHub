@@ -1,0 +1,511 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JK DIGITAL HUB</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#2563eb',
+                        secondary: '#1e40af',
+                        accent: '#f97316'
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+        body {
+            font-family: 'Poppins', sans-serif;
+            scroll-behavior: smooth;
+        }
+        .hero-bg {
+            background: linear-gradient(135deg, rgba(37, 99, 235, 0.1) 0%, rgba(30, 64, 175, 0.1) 100%);
+        }
+        .service-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+        }
+        .feature-item {
+            transition: all 0.3s ease;
+        }
+        .feature-item:hover {
+            transform: scale(1.05);
+        }
+        .animate-fade-in {
+            animation: fadeIn 1s ease-in;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+    </style>
+</head>
+<body class="bg-gray-50">
+    <!-- Navigation -->
+    <nav class="bg-white shadow-lg fixed w-full z-10">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-16">
+                <div class="flex items-center">
+                    <div class="flex-shrink-0 flex items-center">
+                        <i class="fas fa-rocket text-primary text-2xl mr-2"></i>
+                        <span class="text-xl font-bold text-gray-900">JK DIGITAL HUB</span>
+                    </div>
+                </div>
+                <div class="hidden md:flex items-center space-x-8">
+                    <button onclick="scrollToSection('home')" class="text-gray-700 hover:text-primary font-medium">Home</button>
+                    <button onclick="scrollToSection('services')" class="text-gray-700 hover:text-primary font-medium">Services</button>
+                    <button onclick="scrollToSection('about')" class="text-gray-700 hover:text-primary font-medium">About</button>
+                    <button onclick="scrollToSection('contact')" class="text-gray-700 hover:text-primary font-medium">Contact</button>
+                </div>
+                <div class="md:hidden flex items-center">
+                    <button id="mobile-menu-button" class="text-gray-700">
+                        <i class="fas fa-bars text-xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <div id="mobile-menu" class="hidden md:hidden bg-white border-t">
+            <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
+                <button onclick="scrollToSection('home')" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-primary">Home</button>
+                <button onclick="scrollToSection('services')" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-primary">Services</button>
+                <button onclick="scrollToSection('about')" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-primary">About</button>
+                <button onclick="scrollToSection('contact')" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-primary">Contact</button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="pt-24 pb-20 hero-bg">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+                <div class="animate-fade-in">
+                    <h1 class="text-4xl md:text-5xl font-bold text-gray-900 leading-tight">
+                        Transform Your Digital Presence with
+                        <span class="text-primary"> JK DIGITAL HUB</span>
+                    </h1>
+                    <p class="mt-6 text-xl text-gray-600">
+                        We provide cutting-edge digital solutions including website creation, portal development, domain registration, and comprehensive web security services.
+                    </p>
+                    <div class="mt-8 flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-4">
+                        <button onclick="scrollToSection('services')" class="px-8 py-3 bg-primary text-white font-semibold rounded-lg shadow-lg hover:bg-secondary transition duration-300 transform hover:scale-105">
+                            Our Services
+                        </button>
+                        <button onclick="scrollToSection('contact')" class="px-8 py-3 bg-white text-primary font-semibold rounded-lg shadow-lg border-2 border-primary hover:bg-gray-50 transition duration-300">
+                            Contact Us
+                        </button>
+                    </div>
+                </div>
+                <div class="animate-fade-in">
+                    <div class="relative">
+                        <div class="absolute -top-6 -left-6 w-full h-full bg-accent rounded-lg opacity-20"></div>
+                        <div class="relative bg-white rounded-lg shadow-xl p-6 transform rotate-3">
+                            <div class="grid grid-cols-2 gap-4">
+                                <div class="bg-gray-200 border-2 border-dashed rounded-xl w-full h-32"></div>
+                                <div class="bg-gray-200 border-2 border-dashed rounded-xl w-full h-32"></div>
+                                <div class="bg-gray-200 border-2 border-dashed rounded-xl w-full h-32"></div>
+                                <div class="bg-gray-200 border-2 border-dashed rounded-xl w-full h-32"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold text-gray-900">Our <span class="text-primary">Services</span></h2>
+                <p class="mt-4 text-xl text-gray-600 max-w-3xl mx-auto">
+                    Comprehensive digital solutions tailored to meet your business needs
+                </p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <!-- Website Creation -->
+                <div class="service-card bg-white rounded-xl shadow-lg p-8 border border-gray-100 transition-all duration-300">
+                    <div class="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mb-6">
+                        <i class="fas fa-laptop-code text-primary text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-3">Website Creation</h3>
+                    <p class="text-gray-600 mb-4">
+                        Custom-built websites designed to showcase your brand and engage visitors with modern aesthetics and seamless functionality.
+                    </p>
+                    <button class="text-primary font-semibold flex items-center">
+                        Learn more
+                        <i class="fas fa-arrow-right ml-2 text-sm"></i>
+                    </button>
+                </div>
+                
+                <!-- Portal Making -->
+                <div class="service-card bg-white rounded-xl shadow-lg p-8 border border-gray-100 transition-all duration-300">
+                    <div class="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mb-6">
+                        <i class="fas fa-user-friends text-green-500 text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-3">Portal Making</h3>
+                    <p class="text-gray-600 mb-4">
+                        Secure and scalable portals for businesses to manage content, users, and operations efficiently.
+                    </p>
+                    <button class="text-primary font-semibold flex items-center">
+                        Learn more
+                        <i class="fas fa-arrow-right ml-2 text-sm"></i>
+                    </button>
+                </div>
+                
+                <!-- Domain Registration -->
+                <div class="service-card bg-white rounded-xl shadow-lg p-8 border border-gray-100 transition-all duration-300">
+                    <div class="w-16 h-16 bg-orange-100 rounded-full flex items-center justify-center mb-6">
+                        <i class="fas fa-globe text-orange-500 text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-3">Domain Registration</h3>
+                    <p class="text-gray-600 mb-4">
+                        Secure your online identity with our reliable domain registration services at competitive prices.
+                    </p>
+                    <button class="text-primary font-semibold flex items-center">
+                        Learn more
+                        <i class="fas fa-arrow-right ml-2 text-sm"></i>
+                    </button>
+                </div>
+                
+                <!-- Website Security -->
+                <div class="service-card bg-white rounded-xl shadow-lg p-8 border border-gray-100 transition-all duration-300">
+                    <div class="w-16 h-16 bg-red-100 rounded-full flex items-center justify-center mb-6">
+                        <i class="fas fa-shield-alt text-red-500 text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-3">Web Security</h3>
+                    <p class="text-gray-600 mb-4">
+                        Protect your digital assets with advanced security measures and monitoring to prevent cyber threats.
+                    </p>
+                    <button class="text-primary font-semibold flex items-center">
+                        Learn more
+                        <i class="fas fa-arrow-right ml-2 text-sm"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-20 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                <div>
+                    <h2 class="text-3xl md:text-4xl font-bold text-gray-900">About <span class="text-primary">JK DIGITAL HUB</span></h2>
+                    <p class="mt-6 text-lg text-gray-600">
+                        At JK DIGITAL HUB, we specialize in providing comprehensive digital solutions to help businesses thrive in the online world. 
+                        Our team of experienced professionals combines technical expertise with creative vision to deliver exceptional results.
+                    </p>
+                    <p class="mt-4 text-lg text-gray-600">
+                        With years of industry experience, we understand the unique challenges businesses face in today's digital landscape and offer 
+                        tailored solutions that drive growth and enhance online presence.
+                    </p>
+                    
+                    <div class="mt-8 grid grid-cols-2 gap-6">
+                        <div class="flex items-start">
+                            <div class="flex-shrink-0">
+                                <div class="w-12 h-12 bg-primary rounded-full flex items-center justify-center">
+                                    <i class="fas fa-check text-white"></i>
+                                </div>
+                            </div>
+                            <div class="ml-4">
+                                <h4 class="text-lg font-semibold text-gray-900">Expert Team</h4>
+                                <p class="mt-1 text-gray-600">Skilled professionals with industry expertise</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start">
+                            <div class="flex-shrink-0">
+                                <div class="w-12 h-12 bg-primary rounded-full flex items-center justify-center">
+                                    <i class="fas fa-check text-white"></i>
+                                </div>
+                            </div>
+                            <div class="ml-4">
+                                <h4 class="text-lg font-semibold text-gray-900">Quality Focus</h4>
+                                <p class="mt-1 text-gray-600">Commitment to delivering excellence in every project</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start">
+                            <div class="flex-shrink-0">
+                                <div class="w-12 h-12 bg-primary rounded-full flex items-center justify-center">
+                                    <i class="fas fa-check text-white"></i>
+                                </div>
+                            </div>
+                            <div class="ml-4">
+                                <h4 class="text-lg font-semibold text-gray-900">Client-Centric</h4>
+                                <p class="mt-1 text-gray-600">Solutions designed around your business needs</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start">
+                            <div class="flex-shrink-0">
+                                <div class="w-12 h-12 bg-primary rounded-full flex items-center justify-center">
+                                    <i class="fas fa-check text-white"></i>
+                                </div>
+                            </div>
+                            <div class="ml-4">
+                                <h4 class="text-lg font-semibold text-gray-900">Innovation</h4>
+                                <p class="mt-1 text-gray-600">Staying ahead with cutting-edge technology</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="relative">
+                    <div class="bg-gray-200 border-2 border-dashed rounded-xl w-full h-96"></div>
+                    <div class="absolute -bottom-6 -right-6 bg-white p-6 rounded-lg shadow-lg">
+                        <div class="flex items-center">
+                            <div class="text-3xl font-bold text-primary">10+</div>
+                            <div class="ml-4">
+                                <div class="font-semibold text-gray-900">Years Experience</div>
+                                <div class="text-gray-600">In Digital Solutions</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold text-gray-900">Why Choose <span class="text-primary">JK DIGITAL HUB</span></h2>
+                <p class="mt-4 text-xl text-gray-600 max-w-3xl mx-auto">
+                    Discover the benefits of partnering with our digital solutions provider
+                </p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="feature-item text-center p-8 bg-gray-50 rounded-xl hover:bg-gray-100">
+                    <div class="w-20 h-20 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-6">
+                        <i class="fas fa-bolt text-primary text-3xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-3">Fast Delivery</h3>
+                    <p class="text-gray-600">
+                        Efficient processes and skilled team ensure quick delivery without compromising quality.
+                    </p>
+                </div>
+                
+                <div class="feature-item text-center p-8 bg-gray-50 rounded-xl hover:bg-gray-100">
+                    <div class="w-20 h-20 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-6">
+                        <i class="fas fa-lock text-green-500 text-3xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-3">Secure Solutions</h3>
+                    <p class="text-gray-600">
+                        Robust security measures protect your data and ensure compliance with industry standards.
+                    </p>
+                </div>
+                
+                <div class="feature-item text-center p-8 bg-gray-50 rounded-xl hover:bg-gray-100">
+                    <div class="w-20 h-20 bg-purple-100 rounded-full flex items-center justify-center mx-auto mb-6">
+                        <i class="fas fa-headset text-purple-500 text-3xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-3">24/7 Support</h3>
+                    <p class="text-gray-600">
+                        Dedicated customer service to assist you whenever you need technical support or guidance.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-20 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold text-gray-900">Get In <span class="text-primary">Touch</span></h2>
+                <p class="mt-4 text-xl text-gray-600 max-w-3xl mx-auto">
+                    Have questions about our services? Reach out to us for a consultation
+                </p>
+            </div>
+            
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
+                <div>
+                    <form class="space-y-6">
+                        <div>
+                            <label class="block text-gray-700 font-medium mb-2">Full Name</label>
+                            <input type="text" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent">
+                        </div>
+                        <div>
+                            <label class="block text-gray-700 font-medium mb-2">Email Address</label>
+                            <input type="email" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent">
+                        </div>
+                        <div>
+                            <label class="block text-gray-700 font-medium mb-2">Subject</label>
+                            <input type="text" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent">
+                        </div>
+                        <div>
+                            <label class="block text-gray-700 font-medium mb-2">Message</label>
+                            <textarea rows="5" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent"></textarea>
+                        </div>
+                        <button type="submit" class="w-full px-6 py-3 bg-primary text-white font-semibold rounded-lg shadow-lg hover:bg-secondary transition duration-300">
+                            Send Message
+                        </button>
+                    </form>
+                </div>
+                
+                <div class="space-y-8">
+                    <div class="flex items-start">
+                        <div class="flex-shrink-0">
+                            <div class="w-12 h-12 bg-primary rounded-full flex items-center justify-center">
+                                <i class="fas fa-map-marker-alt text-white"></i>
+                            </div>
+                        </div>
+                        <div class="ml-6">
+                            <h3 class="text-xl font-bold text-gray-900">Our Location</h3>
+                            <p class="mt-2 text-gray-600">
+                                123 Digital Street, Tech City, TC 10001
+                            </p>
+                        </div>
+                    </div>
+                    
+                    <div class="flex items-start">
+                        <div class="flex-shrink-0">
+                            <div class="w-12 h-12 bg-primary rounded-full flex items-center justify-center">
+                                <i class="fas fa-phone-alt text-white"></i>
+                            </div>
+                        </div>
+                        <div class="ml-6">
+                            <h3 class="text-xl font-bold text-gray-900">Phone Number</h3>
+                            <p class="mt-2 text-gray-600">
+                                +1 (555) 123-4567
+                            </p>
+                        </div>
+                    </div>
+                    
+                    <div class="flex items-start">
+                        <div class="flex-shrink-0">
+                            <div class="w-12 h-12 bg-primary rounded-full flex items-center justify-center">
+                                <i class="fas fa-envelope text-white"></i>
+                            </div>
+                        </div>
+                        <div class="ml-6">
+                            <h3 class="text-xl font-bold text-gray-900">Email Address</h3>
+                            <p class="mt-2 text-gray-600">
+                                info@jkdigitalhub.com
+                            </p>
+                        </div>
+                    </div>
+                    
+                    <div class="pt-8">
+                        <h3 class="text-xl font-bold text-gray-900 mb-4">Follow Us</h3>
+                        <div class="flex space-x-4">
+                            <a href="#" class="w-10 h-10 bg-primary rounded-full flex items-center justify-center text-white hover:bg-secondary transition duration-300">
+                                <i class="fab fa-facebook-f"></i>
+                            </a>
+                            <a href="#" class="w-10 h-10 bg-primary rounded-full flex items-center justify-center text-white hover:bg-secondary transition duration-300">
+                                <i class="fab fa-twitter"></i>
+                            </a>
+                            <a href="#" class="w-10 h-10 bg-primary rounded-full flex items-center justify-center text-white hover:bg-secondary transition duration-300">
+                                <i class="fab fa-instagram"></i>
+                            </a>
+                            <a href="#" class="w-10 h-10 bg-primary rounded-full flex items-center justify-center text-white hover:bg-secondary transition duration-300">
+                                <i class="fab fa-linkedin-in"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                <div>
+                    <div class="flex items-center">
+                        <i class="fas fa-rocket text-primary text-2xl mr-2"></i>
+                        <span class="text-xl font-bold">JK DIGITAL HUB</span>
+                    </div>
+                    <p class="mt-4 text-gray-400">
+                        Providing innovative digital solutions to help businesses grow and succeed online.
+                    </p>
+                </div>
+                
+                <div>
+                    <h3 class="text-lg font-semibold mb-4">Services</h3>
+                    <ul class="space-y-2">
+                        <li><span class="text-gray-400 hover:text-white cursor-pointer">Website Creation</span></li>
+                        <li><span class="text-gray-400 hover:text-white cursor-pointer">Portal Making</span></li>
+                        <li><span class="text-gray-400 hover:text-white cursor-pointer">Domain Registration</span></li>
+                        <li><span class="text-gray-400 hover:text-white cursor-pointer">Web Security</span></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h3 class="text-lg font-semibold mb-4">Company</h3>
+                    <ul class="space-y-2">
+                        <li><span class="text-gray-400 hover:text-white cursor-pointer">About Us</span></li>
+                        <li><span class="text-gray-400 hover:text-white cursor-pointer">Our Team</span></li>
+                        <li><span class="text-gray-400 hover:text-white cursor-pointer">Careers</span></li>
+                        <li><span class="text-gray-400 hover:text-white cursor-pointer">Contact</span></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h3 class="text-lg font-semibold mb-4">Newsletter</h3>
+                    <p class="text-gray-400 mb-4">
+                        Subscribe to our newsletter for the latest updates.
+                    </p>
+                    <div class="flex">
+                        <input type="email" placeholder="Your email" class="px-4 py-2 w-full rounded-l-lg text-gray-900 focus:outline-none">
+                        <button class="bg-primary px-4 py-2 rounded-r-lg hover:bg-secondary transition duration-300">
+                            <i class="fas fa-paper-plane"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="border-t border-gray-800 mt-12 pt-8 text-center text-gray-400">
+                <p>&copy; 2023 JK DIGITAL HUB. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile menu toggle
+        document.getElementById('mobile-menu-button').addEventListener('click', function() {
+            const mobileMenu = document.getElementById('mobile-menu');
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // Smooth scrolling for navigation links
+        function scrollToSection(sectionId) {
+            const element = document.getElementById(sectionId);
+            if (element) {
+                element.scrollIntoView({ behavior: 'smooth' });
+                // Close mobile menu if open
+                document.getElementById('mobile-menu').classList.add('hidden');
+            }
+        }
+
+        // Add scroll animation to service cards when they come into view
+        document.addEventListener('DOMContentLoaded', function() {
+            const serviceCards = document.querySelectorAll('.service-card');
+            
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.style.opacity = 1;
+                        entry.target.style.transform = 'translateY(0)';
+                    }
+                });
+            }, { threshold: 0.1 });
+            
+            serviceCards.forEach(card => {
+                card.style.opacity = 0;
+                card.style.transform = 'translateY(20px)';
+                card.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
+                observer.observe(card);
+            });
+        });
+    </script>
+</body>
+</html>
